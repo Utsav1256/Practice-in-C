@@ -18,21 +18,28 @@ void main() {
         printf("%d ", arr[i]);    
     }
 
-    printf("Enter the element you are wishing to find: ");
+    printf("\nEnter the element you are wishing to find: ");
     scanf("%d", &x);
 
     // linear search
+    int flag = 0;
     for (i = 0; i < size; i++)
     {
         if (arr[i] == x)
         {
-             printf("the element that  you are looking for is in position: %d", i + 1);
+             printf("\nThe element that  you are looking for is in position: %d", i + 1);
+             flag = 1;
              break;
         }
     }
-    if (i == size)
-    {
-        printf("the element that  you are looking for is not present in the given array.");
-    }
+
+    // if (i == size)
+    // {
+    //     printf("the element that  you are looking for is not present in the given array.");
+    // }
     
+    if (flag == 0)
+    {
+        printf("\nThe element that  you are looking for is not present in the given array.");
+    }
 }
