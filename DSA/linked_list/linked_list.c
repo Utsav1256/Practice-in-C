@@ -13,14 +13,16 @@ int main() {
     
     do
     {
+    // Creating new node 
         // Allocating memory space
-        new = malloc(sizeof(struct node));
+        new = (struct node*)malloc(sizeof(struct node));
+        // (struct node*) -> typecasting -> bcz. datatype of *new is struct node
 
         printf("Enter value: ");
         scanf("%d", &new->data);
         new -> next = NULL;
 
-        if (head == NULL)
+        if (head == NULL) // when first node is created
         {
             head = temp = new;
         }
@@ -29,6 +31,7 @@ int main() {
             temp -> next = new;
             temp = temp -> next;
         }
+
         printf("want to add one more node? (1->yes/0->no): ");
         scanf("%d", &choice);
     } 
