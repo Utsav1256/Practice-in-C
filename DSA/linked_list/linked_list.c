@@ -8,6 +8,15 @@ struct node {
 
 struct node *head, *new, *temp; // global pointers
 
+// print the linked list values
+void printLinkedlist(struct node *p) {
+    printf("\nProvided values: ");
+    while(p != NULL) {  
+        printf("%d ", p -> data);
+        p = p -> next;
+    }
+}
+
 int main() {
     int choice; //1->yes/0->no
     
@@ -37,4 +46,6 @@ int main() {
     } 
     while (choice == 1);
     
+    // Traversing in list
+    printLinkedlist(head);
 }
