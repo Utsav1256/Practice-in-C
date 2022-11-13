@@ -34,6 +34,27 @@ void insertAtBeginning(struct node *head) {
     printLinkedlist(head);
 } 
 
+void insertAtEnd(struct node *head) {
+    //Allocating memory space
+    new = (struct node*)malloc(sizeof(struct node*));
+
+    // Creating new node
+    printf("\nEnter value: ");
+    scanf("%d", &new->data);
+    new -> next =NULL;
+
+    // going to the last node
+    temp = head;
+    while(temp -> next != NULL) {
+        temp = temp -> next;
+    }
+
+    // inserting new node at the End of the linked list
+    temp -> next = new;
+
+    printLinkedlist(head);
+}
+
 int main() {
     int choice; //1->yes/0->no
     
@@ -70,7 +91,7 @@ int main() {
     printf("\nLinkedList operation: ");
     do
     {
-        printf("\n1. Insert at the Beginning \n2. Exit");
+        printf("\n1. Insert at the Beginning \n2. Insert at the End \n3. Exit");
         printf("\nEnter the choice: ");
         scanf("%d", &choice);
         switch(choice) {
@@ -80,14 +101,18 @@ int main() {
                 break;
             }
             case 2: {
+                insertAtEnd(head);
+                break;
+            }
+            case 3: {
                 printf("\nExit point");
                 break;
             }
             default: {
-                printf("\nPlease Enter a Valid Choice(1/2)");
+                printf("\nPlease Enter a Valid Choice(1/2/3)");
             }
     }
-    }  while (choice != 2);
+    }  while (choice != 3);
     
    
 }
