@@ -17,7 +17,7 @@ void printLinkedlist(struct node *p) {
     }
 }
  
-void insertAtBeginning(struct node *head) {
+struct node *insertAtBeginning(struct node *head) {
     // Allocating memory space
     new = (struct node*)malloc(sizeof(struct node));
   
@@ -32,6 +32,9 @@ void insertAtBeginning(struct node *head) {
     // head and new are just pointers, not the node itself.
 
     printLinkedlist(head);
+
+    // returning head to the main function
+    return head;
 } 
 
 void insertAtEnd(struct node *head) {
@@ -97,7 +100,7 @@ int main() {
         switch(choice) {
             
             case 1: {
-                insertAtBeginning(head);
+                head = insertAtBeginning(head);
                 break;
             }
             case 2: {
